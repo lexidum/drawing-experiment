@@ -1,13 +1,13 @@
 {
-  "name": "drawing",
+  "name": "@lexidum/type-and-draw",
   "version": "1.0.0",
-  "description": "",
+  "description": "Basic typewriter and drawing tool",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Alexandra Dumitrescu <lexidumitrescu@gmail.com>",
+  "license": "MIT",
   "dependencies": {
     "canvas": "^2.6.1"
   }
