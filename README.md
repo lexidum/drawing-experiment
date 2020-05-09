@@ -5,7 +5,7 @@ An experiment working with node.js and canvas.
 Try by installing:
 
 ```
-npm install @lexidum/text-and-drawing
+npm install @lexidum/type-and-draw
 ```
 
 Example usage:
