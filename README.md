@@ -10,7 +10,7 @@ npm install @lexidum/type-and-draw
 
 Example usage:
 
-```
+```js
 const textImage = require("./index").textImage;
 const path = require("path");
 textImage(
