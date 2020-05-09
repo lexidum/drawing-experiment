@@ -1,11 +1,6 @@
 const canvasLib = require("canvas");
 const fs = require("fs");
 const path = require("path");
-const canvas = canvasLib.createCanvas(600, 600);
-const ctx = canvas.getContext("2d");
-
-ctx.fillStyle = "#A6BC98";
-ctx.fillRect(0, 0, canvas.width, canvas.height);
 
 // ctx.fillStyle = "#175385";
 // ctx.fillRect(canvas.width / 2 - 150, canvas.height / 2 - 150, 300, 300);
@@ -90,7 +85,7 @@ const letters = {
   " ": space,
 };
 
-function letterA(x, y, w, h) {
+function letterA(ctx, x, y, w, h) {
   ctx.beginPath();
   ctx.moveTo(x + w / 2, y);
   ctx.lineTo(x + w / 8, y + h);
@@ -103,7 +98,7 @@ function letterA(x, y, w, h) {
   ctx.stroke();
 }
 
-function letterB(x, y, w, h) {
+function letterB(ctx, x, y, w, h) {
   ctx.beginPath();
   ctx.moveTo(x, y);
   ctx.lineTo(x, y + h);
@@ -116,7 +111,7 @@ function letterB(x, y, w, h) {
   ctx.stroke();
 }
 
-function letterC(x, y, w, h) {
+function letterC(ctx, x, y, w, h) {
   ctx.beginPath();
   ctx.moveTo(x, y);
   ctx.lineTo(x, y + h);
@@ -128,7 +123,7 @@ function letterC(x, y, w, h) {
   ctx.stroke();
 }
 
-function letterD(x, y, w, h) {
+function letterD(ctx, x, y, w, h) {
   ctx.beginPath();
   ctx.moveTo(x, y);
   ctx.lineTo(x, y + h);
@@ -138,14 +133,12 @@ function letterD(x, y, w, h) {
   ctx.stroke();
 }
 
-function letterE(x, y, w, h) {
+function letterE(ctx, x, y, w, h) {
   ctx.beginPath();
   ctx.moveTo(x, y);
   ctx.lineTo(x, y + h);
-
   ctx.moveTo(x, y);
   ctx.lineTo(x + w, y);
-
   ctx.moveTo(x, y + h / 2);
   ctx.lineTo(x + w, y + h / 2);
   ctx.moveTo(x, y + h);
@@ -153,7 +146,7 @@ function letterE(x, y, w, h) {
   ctx.stroke();
 }
 
-function letterF(x, y, w, h) {
+function letterF(ctx, x, y, w, h) {
   ctx.beginPath();
   ctx.moveTo(x, y);
   ctx.lineTo(x, y + h);
@@ -164,7 +157,7 @@ function letterF(x, y, w, h) {
   ctx.stroke();
 }
 
-function letterG(x, y, w, h) {
+function letterG(ctx, x, y, w, h) {
   ctx.beginPath();
   ctx.moveTo(x, y);
   ctx.lineTo(x, y + h);
@@ -177,7 +170,7 @@ function letterG(x, y, w, h) {
   ctx.stroke();
 }
 
-function letterH(x, y, w, h) {
+function letterH(ctx, x, y, w, h) {
   ctx.beginPath();
   ctx.moveTo(x, y);
   ctx.lineTo(x, y + h);
@@ -188,7 +181,7 @@ function letterH(x, y, w, h) {
   ctx.stroke();
 }
 
-function letterI(x, y, w, h) {
+function letterI(ctx, x, y, w, h) {
   ctx.beginPath();
   ctx.moveTo(x + w / 2, y);
   ctx.lineTo(x + w / 2, y + h / 8);
@@ -197,7 +190,7 @@ function letterI(x, y, w, h) {
   ctx.stroke();
 }
 
-function letterJ(x, y, w, h) {
+function letterJ(ctx, x, y, w, h) {
   ctx.beginPath();
   ctx.moveTo(x + w, y);
   ctx.lineTo(x + w, y + h);
@@ -207,7 +200,7 @@ function letterJ(x, y, w, h) {
   ctx.stroke();
 }
 
-function letterK(x, y, w, h) {
+function letterK(ctx, x, y, w, h) {
   ctx.beginPath();
   ctx.moveTo(x, y);
   ctx.lineTo(x, y + h);
@@ -218,7 +211,7 @@ function letterK(x, y, w, h) {
   ctx.stroke();
 }
 
-function letterL(x, y, w, h) {
+function letterL(ctx, x, y, w, h) {
   ctx.beginPath();
   ctx.moveTo(x, y);
   ctx.lineTo(x, y + h);
@@ -226,7 +219,7 @@ function letterL(x, y, w, h) {
   ctx.stroke();
 }
 
-function letterM(x, y, w, h) {
+function letterM(ctx, x, y, w, h) {
   ctx.beginPath();
   ctx.moveTo(x, y);
   ctx.lineTo(x, y + h);
@@ -237,7 +230,7 @@ function letterM(x, y, w, h) {
   ctx.stroke();
 }
 
-function letterN(x, y, w, h) {
+function letterN(ctx, x, y, w, h) {
   ctx.beginPath();
   ctx.moveTo(x, y + h);
   ctx.lineTo(x, y);
@@ -246,7 +239,7 @@ function letterN(x, y, w, h) {
   ctx.stroke();
 }
 
-function letterO(x, y, w, h) {
+function letterO(ctx, x, y, w, h) {
   ctx.beginPath();
   ctx.moveTo(x, y);
   ctx.lineTo(x, y + h);
@@ -256,7 +249,7 @@ function letterO(x, y, w, h) {
   ctx.stroke();
 }
 
-function letterP(x, y, w, h) {
+function letterP(ctx, x, y, w, h) {
   ctx.beginPath();
   ctx.moveTo(x, y);
   ctx.lineTo(x, y + h);
@@ -268,7 +261,7 @@ function letterP(x, y, w, h) {
   ctx.stroke();
 }
 
-function letterQ(x, y, w, h) {
+function letterQ(ctx, x, y, w, h) {
   ctx.beginPath();
   ctx.moveTo(x, y);
   ctx.lineTo(x, y + h / 1.2);
@@ -281,7 +274,7 @@ function letterQ(x, y, w, h) {
   ctx.stroke();
 }
 
-function letterR(x, y, w, h) {
+function letterR(ctx, x, y, w, h) {
   ctx.beginPath();
   ctx.moveTo(x, y);
   ctx.lineTo(x, y + h);
@@ -296,7 +289,7 @@ function letterR(x, y, w, h) {
   ctx.stroke();
 }
 
-function letterS(x, y, w, h) {
+function letterS(ctx, x, y, w, h) {
   ctx.beginPath();
   ctx.moveTo(x, y);
   ctx.lineTo(x + w, y);
@@ -308,7 +301,7 @@ function letterS(x, y, w, h) {
   ctx.stroke();
 }
 
-function letterT(x, y, w, h) {
+function letterT(ctx, x, y, w, h) {
   ctx.beginPath();
   ctx.moveTo(x, y);
   ctx.lineTo(x + w, y);
@@ -317,7 +310,7 @@ function letterT(x, y, w, h) {
   ctx.stroke();
 }
 
-function letterU(x, y, w, h) {
+function letterU(ctx, x, y, w, h) {
   ctx.beginPath();
   ctx.moveTo(x, y);
   ctx.lineTo(x, y + h);
@@ -326,7 +319,7 @@ function letterU(x, y, w, h) {
   ctx.stroke();
 }
 
-function letterV(x, y, w, h) {
+function letterV(ctx, x, y, w, h) {
   ctx.beginPath();
   ctx.moveTo(x, y);
   ctx.lineTo(x + w / 2, y + h);
@@ -335,7 +328,7 @@ function letterV(x, y, w, h) {
   ctx.stroke();
 }
 
-function letterW(x, y, w, h) {
+function letterW(ctx, x, y, w, h) {
   ctx.beginPath();
   ctx.moveTo(x, y);
   ctx.lineTo(x + w / 4, y + h);
@@ -345,7 +338,7 @@ function letterW(x, y, w, h) {
   ctx.stroke();
 }
 
-function letterX(x, y, w, h) {
+function letterX(ctx, x, y, w, h) {
   ctx.beginPath();
   ctx.moveTo(x, y);
   ctx.lineTo(x + w / 2, y + h);
@@ -354,7 +347,7 @@ function letterX(x, y, w, h) {
   ctx.stroke();
 }
 
-function letterY(x, y, w, h) {
+function letterY(ctx, x, y, w, h) {
   ctx.beginPath();
   ctx.moveTo(x, y);
   ctx.lineTo(x + w / 4, y + h / 2);
@@ -363,7 +356,7 @@ function letterY(x, y, w, h) {
   ctx.stroke();
 }
 
-function letterZ(x, y, w, h) {
+function letterZ(ctx, x, y, w, h) {
   ctx.beginPath();
   ctx.moveTo(x, y);
   ctx.lineTo(x + w, y);
@@ -371,43 +364,69 @@ function letterZ(x, y, w, h) {
   ctx.lineTo(x + w, y + h);
   ctx.stroke();
 }
-function space(x, y, w, h) {}
+function space(ctx, x, y, w, h) {}
 
-function typeWriter(alphabet, config, text) {
-  const letters = text.split("");
-  letters.reduce(
+function typeWriter(ctx, alphabet, config, text) {
+  const words = text.split(" ");
+  ctx.strokeStyle = config.textColor;
+  words.reduce(
     (acc, x) => {
-      const letter = x.toUpperCase();
-      if (alphabet[letter]) {
-        alphabet[letter](acc.x, acc.y, config.w, config.h);
-      }
-      acc.x += config.w + 10;
-      if (acc.x + config.w > config.pageW) {
+      const letters = x.split("");
+      const wordWidth = letters.length * config.w + 10 * letters.length - 1;
+      if (wordWidth + acc.x > config.pageW) {
         acc.x = config.x;
         acc.y += config.h * 2;
       }
+      letters.push(" ");
+      const result = letters.reduce(
+        (acc2, y, idx) => {
+          const letter = y.toUpperCase();
+          if (idx > 0) {
+            acc2.x += 10;
+          }
+          if (alphabet[letter]) {
+            alphabet[letter](ctx, acc.x + acc2.x, acc.y, config.w, config.h);
+          }
+          acc2.x += config.w;
+          return acc2;
+        },
+        {
+          x: 0,
+          y: acc.y,
+        }
+      );
+      acc.x += result.x;
       return acc;
     },
     { x: config.x, y: config.y }
   );
 }
 
-typeWriter(
-  letters,
-  {
-    color: "darkGray",
-    x: 20,
-    y: 40,
-    w: 30,
-    h: 30,
-    pageH: canvas.height,
-    pageW: canvas.width,
-  },
-  "Pressed Flowers Glass Water Bottle With Infuser"
-  // "A B C D E F G H I J K L M N O P Q R S T U V W X Y Z"
-);
+function textImage(filePath, styles, text) {
+  const canvas = canvasLib.createCanvas(styles.imageWidth, styles.imageHeight);
+  const ctx = canvas.getContext("2d");
 
-// drawSpirograph(canvas.width / 2, canvas.height / 2, 200, 60, 60, 40, 40);
-const out = fs.createWriteStream(path.join(__dirname, "result.png"));
-const stream = canvas.createPNGStream();
-stream.pipe(out);
+  ctx.fillStyle = styles.bg;
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  typeWriter(
+    ctx,
+    letters,
+    {
+      textColor: styles.textColor,
+      x: styles.startX,
+      y: styles.startY,
+      w: styles.letterWidth,
+      h: styles.letterHeight,
+      pageH: canvas.height,
+      pageW: canvas.width,
+    },
+    text
+    // "A B C D E F G H I J K L M N O P Q R S T U V W X Y Z"
+  );
+  // drawSpirograph(canvas.width / 2, canvas.height / 2, 200, 60, 60, 40, 40);
+  const out = fs.createWriteStream(filePath);
+  const stream = canvas.createPNGStream();
+  stream.pipe(out);
+}
+
+module.exports = { textImage };
